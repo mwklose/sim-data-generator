@@ -37,7 +37,7 @@ class GraphApp(QMainWindow):
 
     # Parse the input from the text box and create nodes and edges
     def parse_input(self):
-        
+        ...
 
     # Draw the graph using matplotlib
     def draw_graph(self):

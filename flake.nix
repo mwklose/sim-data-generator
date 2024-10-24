@@ -22,18 +22,27 @@
   in {
     # Defining the default package, built using the Python environment
     packages.default = pkgs.mkShell {
-      buildInputs = [ pythonEnv ];  # Adding the Python environment to the build inputs
+      buildInputs = [ 
+        pythonEnv 
+        pkgs.qt5.full
+      ];  # Adding the Python environment to the build inputs
     };
 
     # DevShell allows interactive development
     devShells.default = pkgs.mkShell {
-      buildInputs = [ pythonEnv ];
+      buildInputs = [ 
+        pythonEnv 
+        pkgs.qt5.full
+      ];
     };
 
     # A NixOS module for adding the app to a NixOS configuration
     nixosModules.default = {
       config, pkgs, ... }: {
-        environment.systemPackages = [ pythonEnv ];
+        environment.systemPackages = [ 
+          pythonEnv 
+          pkgs.qt5.full
+        ];
       };
   });
 }
